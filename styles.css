@@ -230,6 +230,8 @@
 	margin: 0;
 	padding: 0;
 	}
+	 
+
 	.checkboxcontainer
 	{
 	float:left;
@@ -243,6 +245,17 @@
 	display: flex;
 	flex-direction: column;
 	}
+	.cstmwkdsholder,.cstmwndsholder
+	{ 
+		display:none;
+		float:left;
+		width:100%;
+		flex-direction: column;
+		margin-left: 20px;
+		
+  
+	}
+
 	.checkboxcontainer input,.radiobuttoncontainer input  {
 	padding: 0;
 	height: initial;
@@ -251,17 +264,18 @@
 	display: none;
 	cursor: pointer;
 	}
-	.checkboxcontainer label {
+	.checkboxcontainer label,.cstmwkdsholder label,.cstmwndsholder label {
 	position: relative;
 	cursor: pointer;
 	float:right;
+	margin:5px;
 	}
 	.radiobuttoncontainer label{
 	position: relative;
 	cursor: pointer;
 	float:left;
 	}
-	.checkboxcontainer label:before,.radiobuttoncontainer label:before {
+	.checkboxcontainer label:before,.radiobuttoncontainer>label:before,.cstmwkdsholder label:before,.cstmwndsholder label:before{
 	content:'';
 	background-color: transparent;
 	border: 2px solid #0079bf;
@@ -273,7 +287,13 @@
 	cursor: pointer;
 	margin-right: 5px;
 	}
-	.checkboxcontainer input:checked + label:after,.radiobuttoncontainer input:checked + label:after {
+	.radiobuttoncontainer> label:before
+	{
+		border-radius: 100%;
+	}
+	 
+	 
+	.checkboxcontainer input:checked + label:after,.cstmwkdsholder input:checked + label:after,.cstmwndsholder input:checked + label:after{
 	content: '';
 	display: block;
 	position: absolute;
@@ -285,6 +305,35 @@
 	border-width: 0 2px 2px 0;
 	transform: rotate(45deg);
 	}
+	.radiobuttoncontainer>input:checked + label:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 5.5px;
+		left: 4px;
+		width: 15.5px;
+		height: 15.5px;
+	 
+		background: #0079bf;
+		 
+		border-radius: 100%;
+		 
+	}
+	#showstatus
+	{
+	 
+		margin-top: 10px;
+		background-color: #128c7e;
+		width: 100%;
+		text-align: center;
+		color: white;
+		border-radius: 10px;
+ 	}
+	 #checktext
+	 {
+		font-size: 16px;
+	 }
+	 
 	#submit {
 	border-radius: 3px;
 	width: 55%;
@@ -521,6 +570,14 @@
 	.site-title a {
 	font-size: 18px;
 	}
+
+	.printit,#result-wrapper
+	{
+         margin-left:10px;
+
+
+	}
+
 	#ageresults span,
 	.age-results span {
 	font-size: 1.5rem;
